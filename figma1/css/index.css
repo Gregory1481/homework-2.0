@@ -21,7 +21,7 @@
 
 .hero h1 {
   margin-bottom: 40px;
-  font-family: "Oswald", sans-serif;
+  font-family: Oswald, sans-serif;
   font-weight: 600;
   font-size: 62px;
   line-height: 115%;
@@ -30,8 +30,8 @@
 }
 
 .hero h1 strong {
-  color: #3596ed;
   font-weight: 600;
+  color: #3596ed;
 }
 
 .hero-info .text {
@@ -50,6 +50,7 @@
   left: 50%;
   transform: translateX(-50%);
   max-width: 161px;
+  padding: 22px;
   background: rgb(255 255 255 / 0.9);
   padding: 22px;
   border: 1px solid #535755;
@@ -62,6 +63,8 @@
 }
 
 .news-article {
+  display: flex;
+  flex-direction: column;
   max-width: 284px;
   background-color: #fff;
   border: 1px solid #d3cbd9;
@@ -108,4 +111,58 @@
 
 .news-link:hover::after {
   transform: translateX(5px);
+}
+
+.faq {
+  position: relative;
+}
+
+.faq::before {
+  content: "";
+  position: absolute;
+  top: 215px;
+  z-index: -1;
+  width: calc(50% - 250px);
+  height: 48px;
+  background: url("../images/decor-large-icon.svg") repeat-x;
+}
+
+.faq-container {
+  display: flex;
+  gap: 28px;
+}
+
+details {
+  margin-bottom: 20px;
+  border-block: 1px solid #d3cbd9;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  list-style: none;
+  padding: 20px;
+  cursor: pointer;
+}
+
+summary::after {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 22px;
+  background: url(../images/arrow-down.icon.svg) no-repeat center / cover;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details > p {
+  padding: 0 20px 20px;
 }

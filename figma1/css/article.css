@@ -84,4 +84,15 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  transition:
+    opacity 0.2,
+    background-color 0.2s;
+}
+
+.article-play-button:hover {
+  background-color: #35a1ff;
+}
+
+.article-play-button:not(:disabled):active {
+  background-color: #2876bb;
 }
