@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-.hero-container {
+.hero__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,23 +30,23 @@
   color: #3596ed;
 }
 
-.hero-info {
+.hero__info {
   max-width: 492px;
 }
 
-.hero-info .text {
+.hero__info .text {
   max-width: 440px;
   margin-bottom: 140px;
 }
 
-.hero-images {
+.hero__images {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.hero-choose {
+.hero__choose {
   position: absolute;
   top: 40px;
   left: 50%;
@@ -61,14 +61,14 @@
   text-align: center;
 }
 
-.news-container {
+.news__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 28px;
 }
 
-.news-article {
+.news__article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,26 +85,26 @@
   overflow: hidden;
 }
 
-.news-article img {
+.news__article--img {
   display: block;
 }
 
-.news-info {
+.news__info {
   padding: 20px 20px 0;
   margin-bottom: 12px;
 }
 
-.news-date {
+.news__date {
   display: inline-block;
   margin-bottom: 8px;
 }
 
-.news-article footer {
+.news__article--footer {
   padding: 0 20px 20px;
   margin-bottom: auto;
 }
 
-.news-link {
+.news__article--link {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -118,7 +118,7 @@
   color: #3596ed;
 }
 
-.news-link::after {
+.news__article--link::after {
   content: "";
   display: inline-block;
   width: 22px;
@@ -132,7 +132,7 @@
     -webkit-transform 0.2s;
 }
 
-.news-link:hover::after {
+.news__article-link:hover::after {
   -webkit-transform: translateX(5px);
   -ms-transform: translateX(5px);
   transform: translateX(5px);
@@ -146,7 +146,7 @@
   top: 215px;
 }
 
-.faq-container {
+.faq__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,7 +263,7 @@ details > p {
     display: none;
   }
 
-  .faq-container {
+  .faq__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
     -ms-flex-direction: column-reverse;
@@ -300,7 +300,7 @@ details > p {
   }
 }
 
-.hero-choose {
+.hero__choose {
   max-width: 125px;
   padding: 10px;
   font-size: 14px;
