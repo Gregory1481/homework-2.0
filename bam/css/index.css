@@ -105,6 +105,7 @@
 }
 
 .news__article-link {
+  position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -123,7 +124,7 @@
   display: inline-block;
   width: 22px;
   height: 9px;
-  background-image: url(../images/arrow-right.svg);
+  background: url("../images/arrow-right.svg") no-repeat center / contain;
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
