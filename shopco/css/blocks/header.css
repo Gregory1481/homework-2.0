@@ -1,0 +1,89 @@
+.header {
+  width: 100%;
+  background-color: var(--color-bg);
+  padding-block: 24px;
+  border: 0 !important;
+  border-bottom: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.header__container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important; /* Намертво расталкивает Логотип, Меню, Поиск и Действия по краям */
+  height: 48px !important;
+  width: 100% !important;
+}
+
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 22px;
+  margin-top: 0;
+}
+
+.logo__text {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  color: var(--color-text);
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header__action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: transform var(--transition-time, 0.3s);
+}
+
+.header__action-btn--search {
+  display: none;
+}
+
+@media (any-hover: hover) {
+  .header__action-btn:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 1054px) {
+  .header {
+    padding-block: 14px;
+  }
+  .header__container {
+    min-height: 48px;
+    gap: 0;
+  }
+  .header__logo {
+    width: auto;
+    height: auto;
+    margin-left: 16px;
+    margin-right: auto;
+  }
+  .logo__text {
+    font-size: 25px;
+  }
+  .header__actions {
+    gap: 16px;
+  }
+}

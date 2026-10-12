@@ -1,0 +1,203 @@
+<!doctype html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./icons/icons-shop.png"
+      type="image/x-icon"
+    />
+    <title>shop.co</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body class="page__body">
+    <!-- 1. ТОР-БАР (Черное информационное окно над хэдером) -->
+    <div class="top-bar" id="top-bar">
+      <div class="container top-bar__container">
+        <p class="top-bar__text">
+          Зарегистрируйтесь и получите скидку 20% на первую покупку.
+          <a class="top-bar__link" href="#">Зарегистрироваться сейчас</a>
+        </p>
+        <button
+          class="top-bar__close"
+          id="top-bar-close"
+          aria-label="Закрыть уведомление"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- 2. ХЕДЕР (Основная шапка сайта) -->
+    <header class="header">
+      <div class="container header__container">
+        <!-- Кнопка Бургер-меню (ИСПРАВЛЕНИЕ: Исправлены пространства имен xmlns для SVG) -->
+        <button
+          class="header__burger burger"
+          id="burger-toggle"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="header__menu"
+        >
+          <span class="burger__icon-menu">
+            <svg
+              width="24"
+              height="16"
+              viewBox="0 0 24 16"
+              fill="none"
+              xmlns="http://w3.org"
+            >
+              <path
+                d="M1 1H23M1 8H23M1 15H23"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <span class="burger__icon-cross">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://w3.org"
+            >
+              <path
+                d="M1 1L15 15M1 15L15 1"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+        </button>
+
+        <!-- Логотип бренда -->
+        <a class="logo header__logo" href="/">
+          <span class="logo__text">SHOP.CO</span>
+        </a>
+
+        <!-- Навигация -->
+        <nav
+          class="menu header__menu"
+          id="header__menu"
+          aria-label="Главное меню"
+        >
+          <button class="menu__close" id="menu-close" aria-label="Закрыть меню">
+            ✕
+          </button>
+          <ul class="menu__list">
+            <li class="menu__item menu__item--dropdown">
+              <a class="menu__link" href="#">
+                Магазин
+                <img
+                  class="menu__arrow"
+                  src="./icons/arrow-bottom.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Скидки</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Новые поступления</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Бренды</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Строка поиска -->
+        <div class="header__search search-bar" id="search-bar">
+          <form class="search-bar__form">
+            <span class="search-bar__icon">
+              <img
+                src="./icons/mag.svg"
+                width="20"
+                height="20"
+                alt=""
+                aria-hidden="true"
+              />
+            </span>
+            <input
+              class="search-bar__input"
+              type="search"
+              placeholder="Искать товары..."
+              aria-label="Поиск по сайту"
+            />
+          </form>
+        </div>
+
+        <!-- Кнопки управления справа -->
+        <div class="header__actions">
+          <!-- Мобильная лупа (ИСПРАВЛЕНИЕ: тег img убран, иконка mag-black.svg намертво садится в CSS фон) -->
+          <button
+            class="header__action-btn header__action-btn--search"
+            id="mobile-search-btn"
+            aria-label="Открыть поиск"
+          ></button>
+
+          <!-- Корзина -->
+          <a class="header__action-btn" href="#cart" aria-label="Корзина">
+            <img
+              src="./icons/cart.svg"
+              width="24"
+              height="24"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+
+          <!-- Профиль -->
+          <a class="header__action-btn" href="#profile" aria-label="Профиль">
+            <img
+              src="./icons/person.svg"
+              width="24"
+              height="24"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Скрипты автоматизации бургера и топ-бара -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Закрытие топ-бара
+        const topBar = document.getElementById("top-bar");
+        const topBarClose = document.getElementById("top-bar-close");
+        if (topBar && topBarClose) {
+          topBarClose.addEventListener("click", () => {
+            topBar.classList.add("top-bar--hidden");
+          });
+        }
+
+        // Логика бургер-меню
+        const burgerToggle = document.getElementById("burger-toggle");
+        const menuClose = document.getElementById("menu-close");
+        const menu = document.getElementById("header__menu");
+
+        if (burgerToggle && menu && menuClose) {
+          burgerToggle.addEventListener("click", () => {
+            menu.classList.add("header__menu--open");
+            burgerToggle.classList.add("burger--open");
+            burgerToggle.setAttribute("aria-expanded", "true");
+          });
+
+          menuClose.addEventListener("click", () => {
+            menu.classList.remove("header__menu--open");
+            burgerToggle.classList.remove("burger--open");
+            burgerToggle.setAttribute("aria-expanded", "false");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
