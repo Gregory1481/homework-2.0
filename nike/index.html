@@ -104,13 +104,17 @@
               Nike <span class="hero__title-accent">air</span> mag
             </h1>
           </header>
-          <img
-            class="hero__img"
-            src="./images/nike-air-mag-1.png"
-            width="846"
-            height="713"
-            alt="Кроссовок Nike Air Mag с желтым кольцом под подошвой"
-          />
+          <picture>
+            <source srcset="./images/nike-air-mag-1.webp" type="image/webp" />
+            <img
+              class="hero__img"
+              src="./images/nike-air-mag-1.png"
+              width="846"
+              height="713"
+              alt="Кроссовок Nike Air Mag с желтым кольцом под подошвой"
+            />
+          </picture>
+
           <footer class="hero__footer">
             <a class="hero__details" href="#">
               Подробнее
@@ -122,6 +126,38 @@
               </svg>
             </a>
           </footer>
+        </div>
+      </section>
+      <section id="air-mag" class="air-mag">
+        <div class="container">
+          <h2 class="air-mag__title title-md">Air Mag</h2>
+          <p class="air-mag__description text-regular">
+            Это не просто кроссовки — это шаг в будущее. С уникальным дизайном и
+            передовыми технологиями, эти кроссовки вдохновлены легендарной
+            киноделией и готовы сопровождать вас в любых приключениях.
+          </p>
+          <div class="air-mag__info-wrapper">
+            <picture>
+              <source srcset="./images/nike-air-mag2.webp" type="image/webp" />
+              <img
+                src="./images/nike-air-mag2.png"
+                width="911"
+                height="635"
+                loading="lazy"
+                alt="Кроссовки air-mag с желтым кольцом вокруг"
+              />
+            </picture>
+            <ul class="air-mag__info-list text-light">
+              <li class="air-mag__info-item">
+                инновационная технология амортизации, которая обеспечивает
+                непревзойденную поддержу суставов
+              </li>
+              <li class="air-mag__info-item">
+                высококачественные синтетические материалы для долговечности
+                и комфорта
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
