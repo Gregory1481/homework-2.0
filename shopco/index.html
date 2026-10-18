@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body class="page__body">
-    <!-- 1. ТОР-БАР (Черное информационное окно над хэдером) -->
     <div class="top-bar" id="top-bar">
       <div class="container top-bar__container">
-        <p class="top-bar__text">
+        <p class="top-bar__text" id="top-bar-text-content">
           Зарегистрируйтесь и получите скидку 20% на первую покупку.
           <a class="top-bar__link" href="#">Зарегистрироваться сейчас</a>
         </p>
@@ -28,11 +27,8 @@
         </button>
       </div>
     </div>
-
-    <!-- 2. ХЕДЕР (Основная шапка сайта) -->
     <header class="header">
       <div class="container header__container">
-        <!-- Кнопка Бургер-меню (ИСПРАВЛЕНИЕ: Исправлены пространства имен xmlns для SVG) -->
         <button
           class="header__burger burger"
           id="burger-toggle"
@@ -73,13 +69,9 @@
             </svg>
           </span>
         </button>
-
-        <!-- Логотип бренда -->
         <a class="logo header__logo" href="/">
           <span class="logo__text">SHOP.CO</span>
         </a>
-
-        <!-- Навигация -->
         <nav
           class="menu header__menu"
           id="header__menu"
@@ -111,8 +103,6 @@
             </li>
           </ul>
         </nav>
-
-        <!-- Строка поиска -->
         <div class="header__search search-bar" id="search-bar">
           <form class="search-bar__form">
             <span class="search-bar__icon">
@@ -132,17 +122,12 @@
             />
           </form>
         </div>
-
-        <!-- Кнопки управления справа -->
         <div class="header__actions">
-          <!-- Мобильная лупа (ИСПРАВЛЕНИЕ: тег img убран, иконка mag-black.svg намертво садится в CSS фон) -->
           <button
             class="header__action-btn header__action-btn--search"
             id="mobile-search-btn"
             aria-label="Открыть поиск"
           ></button>
-
-          <!-- Корзина -->
           <a class="header__action-btn" href="#cart" aria-label="Корзина">
             <img
               src="./icons/cart.svg"
@@ -152,9 +137,7 @@
               aria-hidden="true"
             />
           </a>
-
-          <!-- Профиль -->
-          <a class="header__action-btn" href="#profile" aria-label="Профиль">
+          <a class="header__action-btn" href="#profile" aria-label="Profiles">
             <img
               src="./icons/person.svg"
               width="24"
@@ -166,11 +149,91 @@
         </div>
       </div>
     </header>
+    <main class="page__main">
+      <section class="hero">
+        <div class="hero__container container">
+          <div class="hero__content">
+            <h1 class="hero__title">Найди одежду которая выразит твой стиль</h1>
+            <p class="hero__descr">
+              Просмотрите наш набор тщательно сделанной одежды, созданный чтобы
+              подчеркнуть ваш индивидуальный стиль.
+            </p>
+            <a href="#" class="hero__btn">Купить сейчас</a>
 
-    <!-- Скрипты автоматизации бургера и топ-бара -->
+            <div class="hero__stats">
+              <div class="hero__stat-item">
+                <span class="hero__stat-num">200+</span>
+                <span class="hero__stat-text">Всемирных брендов</span>
+              </div>
+              <div class="hero__stat-item">
+                <span class="hero__stat-num">2,000+</span>
+                <span class="hero__stat-text">Качественных товаров</span>
+              </div>
+              <div class="hero__stat-item">
+                <span class="hero__stat-num">30,000+</span>
+                <span class="hero__stat-text">Счастливых клиентов</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__image-wrapper">
+            <img
+              src="./images/hero-models.jpg"
+              alt="Одежда выражающая стиль"
+              class="hero__image"
+            />
+          </div>
+
+          <img
+            src="./icons/big-star.svg"
+            alt=""
+            class="hero__star hero__star--big"
+            aria-hidden="true"
+          />
+          <img
+            src="./icons/little-star.svg"
+            alt=""
+            class="hero__star hero__star--small"
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+
+      <section class="brands">
+        <div class="container brands__container">
+          <ul class="brands__list">
+            <li class="brands__item">
+              <img
+                src="./images/versace.svg"
+                alt="Versace"
+                class="brands__img"
+              />
+            </li>
+            <li class="brands__item">
+              <img src="./images/zara.svg" alt="Zara" class="brands__img" />
+            </li>
+            <li class="brands__item">
+              <img src="./images/gucci.svg" alt="Gucci" class="brands__img" />
+            </li>
+            <li class="brands__item">
+              <img src="./images/prada.svg" alt="Prada" class="brands__img" />
+            </li>
+            <li class="brands__item">
+              <img
+                src="./images/calvin-klein.svg"
+                alt="Calvin Klein"
+                class="brands__img"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Скрипты автоматизации бургера, топ-бара и динамической смены текста -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Закрытие топ-бара
+        // 1. Логика закрытия топ-бара
         const topBar = document.getElementById("top-bar");
         const topBarClose = document.getElementById("top-bar-close");
         if (topBar && topBarClose) {
@@ -179,7 +242,7 @@
           });
         }
 
-        // Логика бургер-меню
+        // 2. Логика работы бургер-меню
         const burgerToggle = document.getElementById("burger-toggle");
         const menuClose = document.getElementById("menu-close");
         const menu = document.getElementById("header__menu");
@@ -196,6 +259,29 @@
             burgerToggle.classList.remove("burger--open");
             burgerToggle.setAttribute("aria-expanded", "false");
           });
+        }
+
+        // 3. Автоматическое изменение длинной строки в «Зарегистрироваться здесь» при < 658px
+        const topBarTextContent = document.getElementById(
+          "top-bar-text-content",
+        );
+
+        if (topBarTextContent) {
+          function checkWidthAndToggleText() {
+            if (window.innerWidth < 658) {
+              topBarTextContent.innerHTML =
+                '<a class="top-bar__link" href="#">Зарегистрироваться здесь</a>';
+            } else {
+              topBarTextContent.innerHTML =
+                'Зарегистрируйтесь и получите скидку 20% на первую покупку. <a class="top-bar__link" href="#">Зарегистрироваться сейчас</a>';
+            }
+          }
+
+          // Выполняем проверку сразу при отрисовке разметки
+          checkWidthAndToggleText();
+
+          // Добавляем отслеживание изменения размеров окна
+          window.addEventListener("resize", checkWidthAndToggleText);
         }
       });
     </script>

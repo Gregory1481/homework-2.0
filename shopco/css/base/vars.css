@@ -1,6 +1,6 @@
 :root {
-  --font-main: "Satoshi", sans-serif;
-  --font-accent: "Integral CF", sans-serif;
+  --font-main: "Satoshi", "Open Sans", sans-serif;
+  --font-accent: "Integral CF", "Open Sans", sans-serif;
   --color-bg: #ffffff;
   --color-surface: #f0f0f0;
   --color-text: #000000;

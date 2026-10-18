@@ -1,7 +1,7 @@
 .header__search {
-  flex-grow: 1 !important; /* Заставляет инпут расширяться, заполняя пустоту */
+  flex-grow: 1 !important;
   max-width: 577px;
-  margin-inline: 40px !important; /* Создает макетные отступы 40px слева и справа */
+  margin-inline: 40px !important;
 }
 
 .search-bar__form {

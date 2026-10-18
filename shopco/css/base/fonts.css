@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap");
+
 @font-face {
   font-family: Satoshi;
   src:
@@ -32,33 +34,26 @@
 }
 
 @font-face {
-  font-family: Integral CF;
-  src:
-    local("FONTSPRING DEMO - Integral CF Regular"),
-    local("Fontspring-DEMO-integralcf-regular"),
-    url("../../fonts/Fontspring-DEMO-integralcf-regular.otf") format("opentype");
+  font-family: "Integral CF";
+  src: url("../../fonts/Fontspring-DEMO-integralcf-regular.otf")
+    format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Integral CF;
-  src:
-    local("FONTSPRING DEMO - Integral CF Bold"),
-    local("Fontspring-DEMO-integralcf-bold"),
-    url("../../fonts/Fontspring-DEMO-integralcf-bold.otf") format("opentype");
+  font-family: "Integral CF";
+  src: url("../../fonts/Fontspring-DEMO-integralcf-bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Integral CF;
-  src:
-    local("FONTSPRING DEMO - Integral CF Heavy Regular"),
-    local("Fontspring-DEMO-integralcf-heavy"),
-    url("../../fonts/Fontspring-DEMO-integralcf-heavy.otf") format("opentype");
+  font-family: "Integral CF";
+  src: url("../../fonts/Fontspring-DEMO-integralcf-heavy.otf")
+    format("opentype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
