@@ -1,6 +1,10 @@
+/* shopco/css/index.css */
+
 @import "./base/normalize.css";
 @import "./base/fonts.css";
 @import "./base/vars.css";
+@import "./blocks/products.css";
+@import "./blocks/dress-style.css";
 
 * {
   box-sizing: border-box;
@@ -24,6 +28,7 @@ body {
   width: 100%;
 }
 
+/* --- 1. TOP BAR (Информационная плашка сверху) --- */
 .top-bar {
   width: 100%;
   min-height: 38px;
@@ -80,6 +85,7 @@ body {
   transition: opacity var(--transition-time, 0.3s);
 }
 
+/* --- 2. HEADER (Главная шапка сайта) --- */
 .header {
   width: 100%;
   background-color: var(--color-bg);
@@ -250,9 +256,9 @@ body {
   display: none;
 }
 
+/* --- 3. БЛОК HERO (Grid-версия для точного кадрирования) --- */
 .hero {
   width: 100%;
-  height: 663px;
   background-color: #f2f0f1;
   position: relative;
 }
@@ -261,7 +267,7 @@ body {
   height: 100%;
   display: grid;
   grid-template-columns: 53% 47%;
-  align-items: start;
+  align-items: start; /* Выравниваем по верхнему краю сетки, чтобы поднять текст выше */
   position: relative;
 }
 
@@ -270,17 +276,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 103px;
+  padding-top: 103px; /* Задаем точный отступ сверху из Figma, возвращая текст на его уровень */
   padding-bottom: 116px;
   position: relative;
   z-index: 20;
 }
 
 .hero__title {
-  font-family: var(--font-accent);
-  font-weight: 900;
-  font-size: 57px;
-  line-height: 112%;
+  font-family: "FONTSPRING DEMO - Integral CF Heavy", var(--font-accent),
+    sans-serif;
+  font-weight: 900; /* Integral CF Heavy */
+  font-size: 64px;
+  line-height: 100%;
   color: #000000;
   text-transform: uppercase;
   margin: 0;
@@ -288,15 +295,16 @@ body {
 }
 
 .hero__descr {
-  font-family: var(--font-main);
+  font-family: var(--font-main), sans-serif; /* Satoshi */
   font-weight: 400;
   font-size: 16px;
   line-height: 138%;
   color: rgba(0, 0, 0, 0.6);
   margin: 0;
-  max-width: 545px;
+  max-width: 545px; /* Ограничение ширины текстового блока из Figma, чтобы строчки не раздувались */
 }
 
+/* Кнопка "Купить сейчас" */
 .hero__btn {
   display: inline-flex;
   align-items: center;
@@ -305,23 +313,24 @@ body {
   height: 52px;
   background-color: #000000;
   color: #ffffff;
-  font-family: var(--font-main);
+  font-family: var(--font-main), sans-serif;
   font-weight: 500;
   font-size: 16px;
   text-decoration: none;
   border-radius: 62px;
-  margin-top: 32px;
+  margin-top: 32px; /* Ровно 32px от описания до кнопки */
   margin-bottom: 0;
   transition:
     background-color 0.3s,
     transform 0.3s;
 }
 
+/* Счётчики статистики */
 .hero__stats {
   display: flex;
   align-items: center;
   gap: 64px;
-  margin-top: 46px;
+  margin-top: 46px; /* Ровно 46px от кнопки до цифр */
 }
 
 .hero__stat-item {
@@ -343,7 +352,7 @@ body {
 }
 
 .hero__stat-num {
-  font-family: var(--font-main);
+  font-family: var(--font-main), sans-serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 120%;
@@ -352,12 +361,13 @@ body {
 }
 
 .hero__stat-text {
-  font-family: var(--font-main);
+  font-family: var(--font-main), sans-serif;
   font-weight: 400;
   font-size: 16px;
   color: rgba(0, 0, 0, 0.6);
 }
 
+/* Обёртка для картинки моделей */
 .hero__image-wrapper {
   display: flex;
   align-items: flex-end;
@@ -373,11 +383,12 @@ body {
   max-height: 700px;
   object-fit: contain;
   display: block;
-  margin-left: -50px;
+  margin-left: -50px; /* Сдвигаем моделей левее, чтобы локоть заходил под текст */
   position: relative;
   z-index: 10;
 }
 
+/* Декоративные звёздочки */
 .hero__star {
   position: absolute;
   display: block;
@@ -399,6 +410,7 @@ body {
   left: 680px;
 }
 
+/* --- 4. БЛОК BRANDS (Черная полоса снизу) --- */
 .brands {
   width: 100%;
   height: 122px;
@@ -410,10 +422,10 @@ body {
 }
 
 .brands__container {
-  max-width: 1272px;
+  max-width: 1440px;
   margin: 0 auto;
   width: 100%;
-  padding-inline: 16px;
+  padding: 0;
 }
 
 .brands__list {
@@ -422,13 +434,15 @@ body {
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: flex-start;
 }
 
-.brands__item:first-child,
+.brands__item:first-child {
+  margin-left: 100px;
+}
+
 .brands__item:not(:first-child) {
-  margin-left: 0;
+  margin-left: 106px;
 }
 
 .brands__img {
@@ -438,27 +452,54 @@ body {
   object-fit: contain;
 }
 
-@media (max-width: 1400px) {
-  .hero__star--big {
-    right: 2%;
-    top: 10%;
+/* --- АДАПТИВНЫЕ МЕДИА-ЗАПРОСЫ --- */
+@media (any-hover: hover) {
+  .menu__link:hover {
+    color: var(--color-text-muted);
   }
-  .hero__star--small {
-    left: 51%;
-    top: 45%;
+  .header__action-btn:hover {
+    transform: scale(1.05);
   }
-  .hero__image {
-    width: 115%;
-    margin-left: -20px;
+  .top-bar__close:hover {
+    opacity: 1;
+  }
+  .hero__btn:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
   }
 }
 
 @media (max-width: 1200px) {
+  .hero__title {
+    font-size: 48px;
+  }
   .hero__stats {
     gap: 32px;
   }
   .hero__stat-item:not(:last-child)::after {
     right: -16px;
+  }
+  .hero__image {
+    width: 100%;
+    margin-left: 0;
+  }
+  .hero__star--big {
+    width: 80px;
+    height: 80px;
+    top: 40px;
+    right: 20px;
+  }
+  .hero__star--small {
+    width: 44px;
+    height: 44px;
+    top: 260px;
+    left: 55%;
+  }
+  .brands__item:first-child {
+    margin-left: 50px;
+  }
+  .brands__item:not(:first-child) {
+    margin-left: 60px;
   }
 }
 
@@ -547,148 +588,114 @@ body {
     gap: 24px;
   }
 }
-
 @media (max-width: 992px) {
-  .hero {
-    height: auto;
-    padding-bottom: 0;
-    overflow: hidden;
-  }
-
   .hero__container {
     grid-template-columns: 1fr;
     text-align: left;
-    padding-top: 40px;
-    justify-items: start;
+    padding-top: 32px;
   }
-
   .hero__content {
     align-items: flex-start;
-    max-width: none;
+    max-width: 100%;
     padding-top: 0;
     padding-bottom: 0;
-    width: 100%;
   }
-
   .hero__title {
-    font-size: 32px;
+    font-size: 36px;
     margin-bottom: 20px;
   }
-
   .hero__descr {
+    max-width: 100%;
     font-size: 14px;
-    max-width: none;
   }
-
   .hero__btn {
     width: 100%;
-    height: 48px;
+    max-width: 100%;
     margin-top: 24px;
   }
-
   .hero__stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 0;
     width: 100%;
-    margin-top: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 56px;
+    margin-top: 32px;
   }
-
-  .hero__stats::before {
-    content: "";
-    grid-column: 1 / -1;
-    grid-row: 1;
-    justify-self: center;
-    align-self: stretch;
-    width: 1px;
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-
+  /* 1-й и 2-й счётчики: текст по левому краю, между ними разделитель */
   .hero__stat-item {
-    min-width: 0;
-    justify-self: center;
     align-items: flex-start;
     text-align: left;
   }
-
-  .hero__stat-item::after {
+  .hero__stat-item:not(:last-child)::after {
     display: none;
   }
-
-  .hero__stat-item:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1;
+  .hero__stat-item:first-child::after {
+    display: block;
+    right: -28px;
   }
-
-  .hero__stat-item:nth-child(2) {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
+  /* 3-й счётчик: отдельной строкой по центру */
   .hero__stat-item:nth-child(3) {
-    grid-column: 1 / -1;
-    grid-row: 2;
+    flex-basis: 100%;
+    align-items: center;
+    text-align: center;
   }
-
   .hero__stat-num {
-    font-size: 20px;
+    font-size: 24px;
+    line-height: 120%;
   }
-
   .hero__stat-text {
     font-size: 12px;
   }
-
+  /* фото на всю ширину экрана, без боковых полей контейнера */
   .hero__image-wrapper {
-    height: auto;
-    margin-top: 32px;
-  }
-
-  .hero__image {
+    display: block;
     width: calc(100% + 32px);
-    max-width: none;
-    max-height: none;
-    margin-left: -16px;
-    aspect-ratio: 346 / 295;
-    object-fit: cover;
-    object-position: center top;
+    height: auto;
+    margin: 24px -16px 0;
   }
-
+  .hero__image {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    margin-left: 0;
+  }
+  .hero__star {
+    display: block;
+  }
   .hero__star--big {
-    width: 18.5vw;
-    height: 18.5vw;
+    width: 72px;
+    height: 72px;
     top: auto;
     left: auto;
-    right: 5.8vw;
-    bottom: 55.5vw;
+    right: 20px;
+    bottom: 38%;
   }
-
   .hero__star--small {
-    width: 11vw;
-    height: 11vw;
+    width: 40px;
+    height: 40px;
     top: auto;
-    right: auto;
-    left: 7vw;
-    bottom: 42.5vw;
+    left: 32px;
+    bottom: 30%;
   }
-}
-
-@media (max-width: 600px) {
   .brands {
     height: auto;
-    padding-block: 32px;
+    padding-block: 30px;
   }
-
   .brands__list {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 24px 32px;
   }
-
-  .brands__item {
-    flex-shrink: 0;
+  .brands__item:first-child,
+  .brands__item:not(:first-child) {
+    margin-left: 0;
   }
-
-  .brands__img {
-    max-height: 22px;
+}
+@media (max-width: 652px) {
+  .top-bar {
+    font-size: 11.5px;
+    padding-block: 7px;
+  }
+  .top-bar__container {
+    padding-inline: 16px 40px;
   }
 }

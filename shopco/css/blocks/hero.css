@@ -1,12 +1,18 @@
+/* shopco/css/blocks/hero.css */
+
 .hero {
   position: relative;
-  background-color: var(--color-surface, #f2f0f1);
+  background-color: var(
+    --color-surface,
+    #f2f0f1
+  ); /* Светло-серый фон под фото и текстом */
   overflow: hidden;
 }
 
 .hero__container {
   display: flex;
   align-items: center;
+  /* Подключаем фоновое изображение: выравниваем по правому краю и низу */
   background-image: url("../../images/hero-models.jpg");
   background-repeat: no-repeat;
   background-position: right bottom;
@@ -44,6 +50,7 @@
   color: var(--color-text-muted, #606060);
 }
 
+/* Свойства кнопки "Купить сейчас" */
 .hero__btn {
   display: inline-flex;
   align-items: center;
@@ -74,6 +81,7 @@
   transform: translateY(0);
 }
 
+/* Счётчики (Stats) */
 .hero__stats {
   display: flex;
   flex-wrap: wrap;
@@ -86,6 +94,7 @@
   flex-direction: column;
 }
 
+/* Вертикальные разделительные линии между счетчиками */
 .hero__stat-item:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -113,20 +122,22 @@
   color: var(--color-text-muted, #606060);
 }
 
+/* Контейнер для адаптивной картинки на мобилках */
 .hero__image-wrapper {
   display: none;
 }
 
+/* Адаптив для планшетов и мобильных устройств */
 @media (max-width: 1240px) {
   .hero__container {
-    background-position: calc(100% + 100px) bottom;
+    background-position: calc(100% + 100px) bottom; /* Смещаем фото чуть правее, чтобы не перекрывать текст */
   }
 }
 
 @media (max-width: 992px) {
   .hero__container {
     flex-direction: column;
-    background-image: none;
+    background-image: none; /* Убираем фоновую картинку из контейнера */
     padding-top: 40px;
     padding-bottom: 0;
   }
@@ -148,7 +159,7 @@
   }
 
   .hero__btn {
-    width: 100%;
+    width: 100%; /* Кнопка становится на всю ширину на мобилках */
     max-width: 358px;
     margin-bottom: 40px;
   }
@@ -163,7 +174,7 @@
   }
 
   .hero__stat-item:not(:last-child)::after {
-    display: none;
+    display: none; /* Убираем линии десктопного разделения */
   }
 
   .hero__stat-num {
@@ -174,6 +185,7 @@
     font-size: 12px;
   }
 
+  /* Выводим картинку снизу текста на мобилках как отдельный полноценный блок */
   .hero__image-wrapper {
     display: block;
     width: 100%;
@@ -186,6 +198,6 @@
   }
 
   .hero__image {
-    display: none;
+    display: none; /* Прячем тег img на мобилке, так как картинка идет фоном */
   }
 }

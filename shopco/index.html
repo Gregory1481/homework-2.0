@@ -14,7 +14,7 @@
   <body class="page__body">
     <div class="top-bar" id="top-bar">
       <div class="container top-bar__container">
-        <p class="top-bar__text" id="top-bar-text-content">
+        <p class="top-bar__text">
           Зарегистрируйтесь и получите скидку 20% на первую покупку.
           <a class="top-bar__link" href="#">Зарегистрироваться сейчас</a>
         </p>
@@ -27,6 +27,7 @@
         </button>
       </div>
     </div>
+
     <header class="header">
       <div class="container header__container">
         <button
@@ -42,7 +43,7 @@
               height="16"
               viewBox="0 0 24 16"
               fill="none"
-              xmlns="http://w3.org"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M1 1H23M1 8H23M1 15H23"
@@ -58,7 +59,7 @@
               height="16"
               viewBox="0 0 16 16"
               fill="none"
-              xmlns="http://w3.org"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M1 1L15 15M1 15L15 1"
@@ -175,7 +176,6 @@
               </div>
             </div>
           </div>
-
           <div class="hero__image-wrapper">
             <img
               src="./images/hero-models.jpg"
@@ -183,7 +183,6 @@
               class="hero__image"
             />
           </div>
-
           <img
             src="./icons/big-star.svg"
             alt=""
@@ -198,7 +197,6 @@
           />
         </div>
       </section>
-
       <section class="brands">
         <div class="container brands__container">
           <ul class="brands__list">
@@ -228,12 +226,293 @@
           </ul>
         </div>
       </section>
+      <section class="products">
+        <div class="container">
+          <div class="products__block">
+            <h2 class="products__title">Новые поступления</h2>
+            <ul class="products__list">
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/black-t-shirt.svg"
+                      alt="Футболка с лентой"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Футболка с лентой</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 4.5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">4.5<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽5000</span>
+                  </div>
+                </a>
+              </li>
+
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/blue-jeans.svg"
+                      alt="Узкие джинсы"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Узкие джинсы</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 3.5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">3.5<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽5000</span>
+                    <span class="price__old">₽6000</span>
+                    <span class="price__badge">-20%</span>
+                  </div>
+                </a>
+              </li>
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/plaid-shirt.svg"
+                      alt="Клетчатая рубашка"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Клетчатая рубашка</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 4.5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">4.5<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽7000</span>
+                  </div>
+                </a>
+              </li>
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/black-orange-t-shirt.svg"
+                      alt="Футболка с полосами"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Футболка с полосами</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 4.5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">4.5<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽6000</span>
+                    <span class="price__old">₽8000</span>
+                    <span class="price__badge">-30%</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <a class="products__more" href="#">Посмотреть всё</a>
+          </div>
+          <hr class="products__divider" />
+          <div class="products__block">
+            <h2 class="products__title">Лидеры продаж</h2>
+            <ul class="products__list">
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/green-shirt.svg"
+                      alt="Рубашка в полоску"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Рубашка в полоску</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">5.0<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽5000</span>
+                    <span class="price__old">₽6000</span>
+                    <span class="price__badge">-20%</span>
+                  </div>
+                </a>
+              </li>
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/orange-t-shirt.svg"
+                      alt="Футболка «Courage»"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Футболка «Courage»</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 4"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">4.0<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽5000</span>
+                  </div>
+                </a>
+              </li>
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/shorts.svg"
+                      alt="Свободные бермуды"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Свободные бермуды</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 3"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">3.0<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽4000</span>
+                  </div>
+                </a>
+              </li>
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/black-jeans.svg"
+                      alt="Потертые узкие джинсы"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Потертые узкие джинсы</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 4.5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">4.5<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽7000</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <a class="products__more" href="#">Посмотреть всё</a>
+          </div>
+        </div>
+      </section>
+      <section class="dress-style">
+        <div class="container">
+          <div class="dress-style__box">
+            <h2 class="dress-style__title">Выбери свой стиль</h2>
+            <ul class="dress-style__list">
+              <li class="dress-style__item dress-style__item--small">
+                <a class="style-card" href="#">
+                  <img
+                    class="style-card__img"
+                    src="./images/style-clothes/free-style.svg"
+                    alt="Свободный"
+                    width="407"
+                    height="289"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+              <li class="dress-style__item dress-style__item--large">
+                <a class="style-card" href="#">
+                  <img
+                    class="style-card__img"
+                    src="./images/style-clothes/formal-style.svg"
+                    alt="Формальный"
+                    width="684"
+                    height="289"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+              <li class="dress-style__item dress-style__item--large">
+                <a class="style-card" href="#">
+                  <img
+                    class="style-card__img"
+                    src="./images/style-clothes/evening-style.svg"
+                    alt="Вечерний"
+                    width="684"
+                    height="289"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+              <li class="dress-style__item dress-style__item--small">
+                <a class="style-card" href="#">
+                  <img
+                    class="style-card__img"
+                    src="./images/style-clothes/sport-style.svg"
+                    alt="Спорт"
+                    width="407"
+                    height="289"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Скрипты автоматизации бургера, топ-бара и динамической смены текста -->
+    <!-- Скрипты автоматизации бургера и топ-бара -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // 1. Логика закрытия топ-бара
         const topBar = document.getElementById("top-bar");
         const topBarClose = document.getElementById("top-bar-close");
         if (topBar && topBarClose) {
@@ -242,7 +521,6 @@
           });
         }
 
-        // 2. Логика работы бургер-меню
         const burgerToggle = document.getElementById("burger-toggle");
         const menuClose = document.getElementById("menu-close");
         const menu = document.getElementById("header__menu");
@@ -259,29 +537,6 @@
             burgerToggle.classList.remove("burger--open");
             burgerToggle.setAttribute("aria-expanded", "false");
           });
-        }
-
-        // 3. Автоматическое изменение длинной строки в «Зарегистрироваться здесь» при < 658px
-        const topBarTextContent = document.getElementById(
-          "top-bar-text-content",
-        );
-
-        if (topBarTextContent) {
-          function checkWidthAndToggleText() {
-            if (window.innerWidth < 658) {
-              topBarTextContent.innerHTML =
-                '<a class="top-bar__link" href="#">Зарегистрироваться здесь</a>';
-            } else {
-              topBarTextContent.innerHTML =
-                'Зарегистрируйтесь и получите скидку 20% на первую покупку. <a class="top-bar__link" href="#">Зарегистрироваться сейчас</a>';
-            }
-          }
-
-          // Выполняем проверку сразу при отрисовке разметки
-          checkWidthAndToggleText();
-
-          // Добавляем отслеживание изменения размеров окна
-          window.addEventListener("resize", checkWidthAndToggleText);
         }
       });
     </script>

@@ -11,7 +11,7 @@
 .header__container {
   display: flex !important;
   align-items: center !important;
-  justify-content: space-between !important;
+  justify-content: space-between !important; /* Намертво расталкивает Логотип, Меню, Поиск и Действия по краям */
   height: 48px !important;
   width: 100% !important;
 }
