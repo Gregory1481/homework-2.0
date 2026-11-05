@@ -1,0 +1,15 @@
+:root {
+  --font-main: "Satoshi", sans-serif;
+  --font-accent: "Integral CF", sans-serif;
+  --color-bg: #ffffff;
+  --color-surface: #f0f0f0;
+  --color-text: #000000;
+  --color-text-muted: #606060;
+  --container-width: 1240px;
+  --container-padding: 16px;
+  --transition-time: 0.3s;
+  --layer-negative: -1;
+  --layer-1: 100;
+  --layer-2: 200;
+  --layer-3: 300;
+}

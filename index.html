@@ -1,228 +1,544 @@
 <!doctype html>
-<html lang="en">
+<html class="page" lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Домашняя работа</title>
-    <link rel="shortcut icon" href="src/logo.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Rubik:wght@500&display=swap"
-      rel="stylesheet"
+      rel="shortcut icon"
+      href="./icons/icons-shop.png"
+      type="image/x-icon"
     />
-    <link rel="stylesheet" href="src/style.css" />
+    <title>shop.co</title>
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
-  <body id="body">
-    <div class="overlay" id="overlay"></div>
-    <div class="layout">
-      <div class="burger" id="burger">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M4 18L20 18"
-              stroke="#DAF765"
-              stroke-width="2"
-              stroke-linecap="round"
-            ></path>
-            <path
-              d="M4 12L20 12"
-              stroke="#DAF765"
-              stroke-width="2"
-              stroke-linecap="round"
-            ></path>
-            <path
-              d="M4 6L20 6"
-              stroke="#DAF765"
-              stroke-width="2"
-              stroke-linecap="round"
-            ></path>
-          </g>
-        </svg>
+  <body class="page__body">
+    <div class="top-bar" id="top-bar">
+      <div class="container top-bar__container">
+        <p class="top-bar__text">
+          Зарегистрируйтесь и получите скидку 20% на первую покупку.
+          <a class="top-bar__link" href="#">Зарегистрироваться сейчас</a>
+        </p>
+        <button
+          class="top-bar__close"
+          id="top-bar-close"
+          aria-label="Закрыть уведомление"
+        >
+          ✕
+        </button>
       </div>
-      <aside class="sidebar" id="sidebar">
-        <div class="sidebar__inner">
-          <div class="logo">
+    </div>
+
+    <header class="header">
+      <div class="container header__container">
+        <button
+          class="header__burger burger"
+          id="burger-toggle"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="header__menu"
+        >
+          <span class="burger__icon-menu">
             <svg
-              width="50"
-              height="50"
-              viewBox="0 0 50 50"
+              width="24"
+              height="16"
+              viewBox="0 0 24 16"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_513_74730)">
-                <path
-                  d="M46.17 -0.257004H3.83C1.57281 -0.257004 -0.257 1.57281 -0.257 3.83V46.17C-0.257 48.4272 1.57281 50.257 3.83 50.257H46.17C48.4272 50.257 50.257 48.4272 50.257 46.17V3.83C50.257 1.57281 48.4272 -0.257004 46.17 -0.257004Z"
-                  fill="#DAF765"
-                />
-                <path
-                  d="M24.375 38.4H42.461L27.441 3.1585H20.4355C20.4355 3.1585 6.7895 35.881 1.1945 49.294C2.015 50.0275 3.0945 50.257 3.6945 50.257H8.8445L23.954 13.07L32.0465 32.8285H24.375V38.4Z"
-                  fill="#323843"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_513_74730">
-                  <rect width="50" height="50" fill="white" />
-                </clipPath>
-              </defs>
+              <path
+                d="M1 1H23M1 8H23M1 15H23"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
             </svg>
-          </div>
-          <div class="sidebar__user">
-            <div class="sidebar__name">Григорий Иванов</div>
-            <div class="sidebar__text">Счастливый студент</div>
-          </div>
-          <div class="sidebar__tabs">
-            <div class="sidebar__item">
-              <button class="sidebar__button active" id="tasks">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                >
-                  <g clip-path="url(#clip0_704_74543)">
-                    <path
-                      d="M17.7083 20H2.29167C1.0275 20 0 18.9725 0 17.7083V2.29167C0 1.0275 1.0275 0 2.29167 0H17.7083C18.9725 0 20 1.0275 20 2.29167V17.7083C20 18.9725 18.9725 20 17.7083 20ZM2.29167 1.25C1.7175 1.25 1.25 1.7175 1.25 2.29167V17.7083C1.25 18.2825 1.7175 18.75 2.29167 18.75H17.7083C18.2825 18.75 18.75 18.2825 18.75 17.7083V2.29167C18.75 1.7175 18.2825 1.25 17.7083 1.25H2.29167Z"
-                      fill="black"
-                    />
-                    <path
-                      d="M6.04167 13.125C5.88167 13.125 5.72167 13.0642 5.6 12.9417L3.1 10.4417C2.85583 10.1975 2.85583 9.80167 3.1 9.5575L5.6 7.0575C5.84417 6.81333 6.24 6.81333 6.48417 7.0575C6.72833 7.30167 6.72833 7.6975 6.48417 7.94167L4.42583 10L6.48417 12.0583C6.72833 12.3025 6.72833 12.6983 6.48417 12.9425C6.36167 13.0642 6.20167 13.125 6.04167 13.125Z"
-                      fill="black"
-                    />
-                    <path
-                      d="M8.95833 14.1667C8.9 14.1667 8.84 14.1583 8.78167 14.1417C8.45083 14.0442 8.26083 13.6967 8.35833 13.3658L10.4417 6.28251C10.5392 5.95084 10.8892 5.76417 11.2175 5.85917C11.5483 5.95667 11.7383 6.30417 11.6408 6.63501L9.5575 13.7183C9.47833 13.9908 9.22833 14.1667 8.95833 14.1667Z"
-                      fill="black"
-                    />
-                    <path
-                      d="M13.9583 13.125C13.7983 13.125 13.6383 13.0642 13.5167 12.9417C13.2725 12.6975 13.2725 12.3017 13.5167 12.0575L15.575 9.99916L13.5167 7.94083C13.2725 7.69666 13.2725 7.30083 13.5167 7.05666C13.7608 6.81249 14.1567 6.81249 14.4008 7.05666L16.9008 9.55666C17.145 9.80083 17.145 10.1967 16.9008 10.4408L14.4008 12.9408C14.2783 13.0642 14.1183 13.125 13.9583 13.125Z"
-                      fill="black"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_704_74543">
-                      <rect width="20" height="20" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                <span>Домашние задания</span>
-              </button>
+          </span>
+          <span class="burger__icon-cross">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1L15 15M1 15L15 1"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+        </button>
+        <a class="logo header__logo" href="/">
+          <span class="logo__text">SHOP.CO</span>
+        </a>
+        <nav
+          class="menu header__menu"
+          id="header__menu"
+          aria-label="Главное меню"
+        >
+          <button class="menu__close" id="menu-close" aria-label="Закрыть меню">
+            ✕
+          </button>
+          <ul class="menu__list">
+            <li class="menu__item menu__item--dropdown">
+              <a class="menu__link" href="#">
+                Магазин
+                <img
+                  class="menu__arrow"
+                  src="./icons/arrow-bottom.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Скидки</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Новые поступления</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Бренды</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__search search-bar" id="search-bar">
+          <form class="search-bar__form">
+            <span class="search-bar__icon">
+              <img
+                src="./icons/mag.svg"
+                width="20"
+                height="20"
+                alt=""
+                aria-hidden="true"
+              />
+            </span>
+            <input
+              class="search-bar__input"
+              type="search"
+              placeholder="Искать товары..."
+              aria-label="Поиск по сайту"
+            />
+          </form>
+        </div>
+        <div class="header__actions">
+          <button
+            class="header__action-btn header__action-btn--search"
+            id="mobile-search-btn"
+            aria-label="Открыть поиск"
+          ></button>
+          <a class="header__action-btn" href="#cart" aria-label="Корзина">
+            <img
+              src="./icons/cart.svg"
+              width="24"
+              height="24"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+          <a class="header__action-btn" href="#profile" aria-label="Profiles">
+            <img
+              src="./icons/person.svg"
+              width="24"
+              height="24"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+    <main class="page__main">
+      <section class="hero">
+        <div class="hero__container container">
+          <div class="hero__content">
+            <h1 class="hero__title">Найди одежду которая выразит твой стиль</h1>
+            <p class="hero__descr">
+              Просмотрите наш набор тщательно сделанной одежды, созданный чтобы
+              подчеркнуть ваш индивидуальный стиль.
+            </p>
+            <a href="#" class="hero__btn">Купить сейчас</a>
+
+            <div class="hero__stats">
+              <div class="hero__stat-item">
+                <span class="hero__stat-num">200+</span>
+                <span class="hero__stat-text">Всемирных брендов</span>
+              </div>
+              <div class="hero__stat-item">
+                <span class="hero__stat-num">2,000+</span>
+                <span class="hero__stat-text">Качественных товаров</span>
+              </div>
+              <div class="hero__stat-item">
+                <span class="hero__stat-num">30,000+</span>
+                <span class="hero__stat-text">Счастливых клиентов</span>
+              </div>
             </div>
-            <div class="sidebar__item">
-              <button class="sidebar__button" id="diplom">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <g clip-path="url(#clip0_704_74553)">
-                    <path
-                      d="M23.2628 10.5971C23.7176 10.365 24 9.90375 24 9.39337C24 8.883 23.7176 8.42175 23.2628 8.18962L12.6135 2.75362C12.2291 2.55824 11.7705 2.55787 11.3854 2.75399L0.736875 8.19C0.282375 8.42175 0 8.883 0 9.39337C0 9.90375 0.282375 10.365 0.736875 10.5971L4.89038 12.7177V18.2074C4.89038 19.8154 8.412 21.393 12 21.393C15.5884 21.393 19.1096 19.815 19.1096 18.2074V12.7174L21.4609 11.517V15.8017L20.901 17.2305C20.7409 17.6389 20.7934 18.0994 21.0405 18.4616C21.2876 18.8246 21.6979 19.041 22.1366 19.041C22.5754 19.041 22.9852 18.8246 23.2324 18.462C23.4795 18.099 23.532 17.6385 23.3719 17.2301L22.8124 15.8021V10.827L23.2628 10.5971ZM17.7623 18.1721C17.6198 18.6375 15.3491 20.0419 12 20.0419C8.65088 20.0419 6.38025 18.6375 6.2415 18.2074V12.3037L6.23887 12.3019C6.23812 12.057 6.1065 11.8207 5.87325 11.7019L1.3515 9.39337L12 3.95737L22.6489 9.39337L12 14.8294L5.87325 11.7019C5.54063 11.5331 4.6695 11.6674 4.5 12C4.33012 12.3322 4.55813 12.5479 4.89038 12.7177L11.3857 16.0331C11.5781 16.1314 11.7889 16.1805 12 16.1805C12.2107 16.1805 12.4222 16.1314 12.6146 16.0331L17.7593 13.407L17.7623 18.1721Z"
-                      fill="black"
+          </div>
+          <div class="hero__image-wrapper">
+            <img
+              src="./images/hero-models.jpg"
+              alt="Одежда выражающая стиль"
+              class="hero__image"
+            />
+          </div>
+          <img
+            src="./icons/big-star.svg"
+            alt=""
+            class="hero__star hero__star--big"
+            aria-hidden="true"
+          />
+          <img
+            src="./icons/little-star.svg"
+            alt=""
+            class="hero__star hero__star--small"
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+      <section class="brands">
+        <div class="container brands__container">
+          <ul class="brands__list">
+            <li class="brands__item">
+              <img
+                src="./images/versace.svg"
+                alt="Versace"
+                class="brands__img"
+              />
+            </li>
+            <li class="brands__item">
+              <img src="./images/zara.svg" alt="Zara" class="brands__img" />
+            </li>
+            <li class="brands__item">
+              <img src="./images/gucci.svg" alt="Gucci" class="brands__img" />
+            </li>
+            <li class="brands__item">
+              <img src="./images/prada.svg" alt="Prada" class="brands__img" />
+            </li>
+            <li class="brands__item">
+              <img
+                src="./images/calvin-klein.svg"
+                alt="Calvin Klein"
+                class="brands__img"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="products">
+        <div class="container">
+          <div class="products__block">
+            <h2 class="products__title">Новые поступления</h2>
+            <ul class="products__list">
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/black-t-shirt.svg"
+                      alt="Футболка с лентой"
+                      width="295"
+                      height="298"
+                      loading="lazy"
                     />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_704_74553">
-                      <rect width="24" height="24" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                <span>Дипломный проект</span>
-              </button>
-            </div>
+                  </div>
+                  <h3 class="product-card__name">Футболка с лентой</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 4.5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">4.5<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽5000</span>
+                  </div>
+                </a>
+              </li>
+
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/blue-jeans.svg"
+                      alt="Узкие джинсы"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Узкие джинсы</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 3.5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">3.5<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽5000</span>
+                    <span class="price__old">₽6000</span>
+                    <span class="price__badge">-20%</span>
+                  </div>
+                </a>
+              </li>
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/plaid-shirt.svg"
+                      alt="Клетчатая рубашка"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Клетчатая рубашка</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 4.5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">4.5<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽7000</span>
+                  </div>
+                </a>
+              </li>
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/black-orange-t-shirt.svg"
+                      alt="Футболка с полосами"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Футболка с полосами</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 4.5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">4.5<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽6000</span>
+                    <span class="price__old">₽8000</span>
+                    <span class="price__badge">-30%</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <a class="products__more" href="#">Посмотреть всё</a>
+          </div>
+          <hr class="products__divider" />
+          <div class="products__block">
+            <h2 class="products__title">Лидеры продаж</h2>
+            <ul class="products__list">
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/green-shirt.svg"
+                      alt="Рубашка в полоску"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Рубашка в полоску</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">5.0<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽5000</span>
+                    <span class="price__old">₽6000</span>
+                    <span class="price__badge">-20%</span>
+                  </div>
+                </a>
+              </li>
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/orange-t-shirt.svg"
+                      alt="Футболка «Courage»"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Футболка «Courage»</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 4"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">4.0<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽5000</span>
+                  </div>
+                </a>
+              </li>
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/shorts.svg"
+                      alt="Свободные бермуды"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Свободные бермуды</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 3"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">3.0<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽4000</span>
+                  </div>
+                </a>
+              </li>
+              <li class="product-card">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__image">
+                    <img
+                      src="images/photo-clothes/black-jeans.svg"
+                      alt="Потертые узкие джинсы"
+                      width="295"
+                      height="298"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 class="product-card__name">Потертые узкие джинсы</h3>
+                  <div class="rating">
+                    <span
+                      class="rating__stars"
+                      style="--rating: 4.5"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="rating__value">4.5<span>/5</span></span>
+                  </div>
+                  <div class="price">
+                    <span class="price__current">₽7000</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <a class="products__more" href="#">Посмотреть всё</a>
           </div>
         </div>
-      </aside>
-      <div class="content">
+      </section>
+      <section class="dress-style">
         <div class="container">
-          <div class="content__block" id="tasksBlock">
-            <div class="content__title">Домашние задания</div>
-            <ul class="content__list">
-              <li class="content__list-item">
-                <a href="hello-arokenru/index.html">Урок 1</a>
+          <div class="dress-style__box">
+            <h2 class="dress-style__title">Выбери свой стиль</h2>
+            <ul class="dress-style__list">
+              <li class="dress-style__item dress-style__item--small">
+                <a class="style-card" href="#">
+                  <img
+                    class="style-card__img"
+                    src="./images/style-clothes/free-style.svg"
+                    alt="Свободный"
+                    width="407"
+                    height="289"
+                    loading="lazy"
+                  />
+                </a>
               </li>
-              <li class="content__list-item">
-                <a href="article-markup/index.html">Урок 2</a>
+              <li class="dress-style__item dress-style__item--large">
+                <a class="style-card" href="#">
+                  <img
+                    class="style-card__img"
+                    src="./images/style-clothes/formal-style.svg"
+                    alt="Формальный"
+                    width="684"
+                    height="289"
+                    loading="lazy"
+                  />
+                </a>
               </li>
-              <li class="content__list-item">
-                <a href="table/css/index.html">Урок 3</a>
+              <li class="dress-style__item dress-style__item--large">
+                <a class="style-card" href="#">
+                  <img
+                    class="style-card__img"
+                    src="./images/style-clothes/evening-style.svg"
+                    alt="Вечерний"
+                    width="684"
+                    height="289"
+                    loading="lazy"
+                  />
+                </a>
               </li>
-              <li class="content__list-item">
-                <a href="forms/index.html">Урок 4</a>
-              </li>
-              <li class="content__list-item">
-                <a href="article/article.html">Урок 5</a>
-              </li>
-              </li>
-              <li class="content__list-item">
-                <a href="flexbox-dz/index.html">Урок 6</a>
-              </li>
-               <li class="content__list-item">
-                <a href="position-transform/article.html">Урок 7</a>
-              </li>
-              <li class="content__list-item">
-                <a href="style forms/index.html">Урок 8</a>
-              </li>
-              <li class="content__list-item">
-                <a href="figma1/article.html">Урок 9</a>
-              </li>
-              <li class="content__list-item">
-                <a href="figma1/index.html">Урок 10</a>
-              </li>
-              <li class="content__list-item">
-                <a href="figma1/index.html">Урок 11</a>
-              </li>
-              <li class="content__list-item">
-                <a href="figma1/index.html">Урок 12</a>
-              </li>
-              <li class="content__list-item">
-                <a href="grid-dz/index.html">Урок 13</a>
-              </li>
-              <li class="content__list-item">
-                <a href="bam/index.html">Урок 14</a>
-              </li>
-              <li class="content__list-item">
-                <a href="nike/112. Начало верстки нового макета/nike/index.html">Урок 15</a>
-              </li>
-              <li class="content__list-item">
-                <a href="nike/index.html">Урок 16</a>
-              </li>
-              <li class="content__list-item">
-                <a href="shopco/index.html">Урок 17</a>
-              </li>
-              <li class="content__list-item">
-                <a href="nike/index.html">Урок 18</a>
-              </li>
-              <li class="content__list-item">
-                <a href="shopco/index.html">Урок 19</a>
+              <li class="dress-style__item dress-style__item--small">
+                <a class="style-card" href="#">
+                  <img
+                    class="style-card__img"
+                    src="./images/style-clothes/sport-style.svg"
+                    alt="Спорт"
+                    width="407"
+                    height="289"
+                    loading="lazy"
+                  />
+                </a>
               </li>
             </ul>
           </div>
-          <div class="content__block hidden" id="diplomBlock">
-            <div class="content__title">Дипломный проект</div>
-            <div class="content__list-diplom">
-              <a href="ПАПКА-С-НОМЕРОМ-УРОКА">Ссылка на ДЗ</a>
-            </div>
-            <div class="content__decor">
-              <div class="content__decor-text">
-                Давай проверим, чему ты научился!
-              </div>
-              <div class="content__decor-img">
-                <img src="src/decor.png" alt="decor" />
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <script src="src/index.js"></script>
+      </section>
+    </main>
+
+    <!-- Скрипты автоматизации бургера и топ-бара -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const topBar = document.getElementById("top-bar");
+        const topBarClose = document.getElementById("top-bar-close");
+        if (topBar && topBarClose) {
+          topBarClose.addEventListener("click", () => {
+            topBar.classList.add("top-bar--hidden");
+          });
+        }
+
+        const burgerToggle = document.getElementById("burger-toggle");
+        const menuClose = document.getElementById("menu-close");
+        const menu = document.getElementById("header__menu");
+
+        if (burgerToggle && menu && menuClose) {
+          burgerToggle.addEventListener("click", () => {
+            menu.classList.add("header__menu--open");
+            burgerToggle.classList.add("burger--open");
+            burgerToggle.setAttribute("aria-expanded", "true");
+          });
+
+          menuClose.addEventListener("click", () => {
+            menu.classList.remove("header__menu--open");
+            burgerToggle.classList.remove("burger--open");
+            burgerToggle.setAttribute("aria-expanded", "false");
+          });
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,114 @@
+/* ===== Блок «Выбери свой стиль» ===== */
+
+.dress-style {
+  padding-bottom: 80px;
+}
+
+.dress-style__box {
+  padding: 70px 64px 76px;
+  border-radius: 40px;
+  background-color: #f0f0f0;
+}
+
+.dress-style__title {
+  margin: 0 0 64px;
+  font-family: "FONTSPRING DEMO - Integral CF Heavy", var(--font-accent),
+    sans-serif;
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 900; /* Integral CF Heavy */
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+/* Две строки: 407 + 684 и 684 + 407 (как в Figma), отступ между карточками 20px */
+.dress-style__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dress-style__item {
+  height: 289px;
+}
+
+.dress-style__item--small {
+  width: calc((100% - 20px) * 407 / 1091);
+}
+
+.dress-style__item--large {
+  width: calc((100% - 20px) * 684 / 1091);
+}
+
+.style-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #fff;
+  overflow: hidden;
+  color: var(--color-text);
+}
+
+.style-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: right center;
+  transition: transform var(--transition-time);
+}
+
+@media (any-hover: hover) {
+  .style-card:hover .style-card__img {
+    transform: scale(1.04);
+  }
+}
+
+/* ===== Адаптив ===== */
+
+@media (max-width: 992px) {
+  .dress-style__box {
+    padding: 48px 32px 52px;
+  }
+
+  .dress-style__title {
+    margin-bottom: 40px;
+    font-size: 40px;
+  }
+
+  @media (max-width: 767px) {
+  .dress-style {
+    padding-bottom: 48px;
+  }
+
+  .dress-style__box {
+    padding: 40px 24px 28px;
+    border-radius: 20px;
+  }
+
+  .dress-style__title {
+    margin-bottom: 28px;
+    font-size: clamp(26px, 8.2vw, 32px);
+    text-wrap: balance;
+  }
+
+  .dress-style__list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+
+  .dress-style__item--small,
+  .dress-style__item--large {
+    width: 100%;
+    height: 190px;
+  }
+}

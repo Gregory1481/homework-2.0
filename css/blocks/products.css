@@ -1,0 +1,239 @@
+.products {
+  padding: 72px 0 80px;
+}
+
+.products__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products__title {
+  margin: 0 0 55px;
+  font-family:
+    "FONTSPRING DEMO - Integral CF Heavy", var(--font-accent), sans-serif;
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+}
+
+.products__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin: 0 0 36px;
+  padding: 0;
+  list-style: none;
+}
+
+.products__more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 218px;
+  height: 52px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 62px;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  transition:
+    background-color var(--transition-time),
+    color var(--transition-time);
+}
+
+@media (any-hover: hover) {
+  .products__more:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+  }
+}
+
+.products__divider {
+  height: 1px;
+  margin: 64px 0;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.product-card__link {
+  display: block;
+  font-family: var(--font-main);
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-card__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 295 / 298;
+  margin-bottom: 16px;
+  border-radius: 20px;
+  background-color: #f0eeed;
+  overflow: hidden;
+}
+
+.product-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition-time);
+}
+
+@media (any-hover: hover) {
+  .product-card__link:hover .product-card__image img {
+    transform: scale(1.04);
+  }
+}
+
+.product-card__name {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #000;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 8px;
+}
+
+.rating__stars {
+  --star: 18px;
+  display: block;
+  width: calc(var(--rating) * var(--star));
+  height: var(--star);
+  background-color: #ffc633;
+  -webkit-mask: var(--star-icon) repeat-x left center / var(--star) var(--star);
+  mask: var(--star-icon) repeat-x left center / var(--star) var(--star);
+  --star-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5l3.1 7 7.6.7-5.7 5 1.7 7.5L12 17.8l-6.7 3.9L7 14.2l-5.7-5 7.6-.7z'/%3E%3C/svg%3E");
+}
+
+.rating__value {
+  font-size: 14px;
+  line-height: 1;
+  color: #000;
+}
+
+.rating__value span {
+  color: var(--color-text-muted);
+}
+
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.price__current {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #000;
+}
+
+.price__old {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.4);
+  text-decoration: line-through;
+}
+
+.price__badge {
+  padding: 6px 14px;
+  border-radius: 62px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 500;
+  color: #ff3333;
+  background-color: rgba(255, 51, 51, 0.1);
+}
+
+@media (max-width: 992px) {
+  .products__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products__list .product-card:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .products {
+    padding: 48px 0 56px;
+  }
+
+  .products__title {
+    margin-bottom: 32px;
+    font-size: clamp(26px, 8.2vw, 32px);
+    line-height: 1.2;
+  }
+
+  .products__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .product-card__image {
+    margin-bottom: 10px;
+    border-radius: 13px;
+  }
+
+  .product-card__name {
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  .rating {
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .rating__stars {
+    --star: 15px;
+  }
+
+  .rating__value {
+    font-size: 12px;
+  }
+
+  .price {
+    flex-wrap: nowrap;
+    gap: 4px;
+  }
+
+  .price__current,
+  .price__old {
+    font-size: 16px;
+  }
+
+  .price__badge {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .products__more {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .products__divider {
+    margin: 40px 0;
+  }
+}
