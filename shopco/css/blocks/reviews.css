@@ -1,0 +1,194 @@
+/* ===== Блок «Что о нас говорят» ===== */
+
+.reviews {
+  --reviews-gap: 20px;
+  /* отступ слева/справа, чтобы первая карточка совпадала с краем контейнера */
+  --reviews-edge: max(16px, calc((100% - 1240px) / 2));
+  padding-bottom: 80px;
+}
+
+.reviews__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.reviews__title {
+  margin: 0;
+  font-family: "FONTSPRING DEMO - Integral CF Heavy", var(--font-accent),
+    sans-serif;
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 900; /* Integral CF Heavy */
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.reviews__controls {
+  display: flex;
+  gap: 16px;
+}
+
+.reviews__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  transition:
+    opacity var(--transition-time),
+    transform var(--transition-time);
+}
+
+.reviews__arrow img {
+  display: block;
+}
+
+.reviews__arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+@media (any-hover: hover) {
+  .reviews__arrow:not(:disabled):hover {
+    transform: scale(1.15);
+  }
+}
+
+/* Лента на всю ширину экрана: соседние карточки выглядывают по краям */
+.reviews__track {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--reviews-edge);
+  padding-inline: var(--reviews-edge);
+  padding-block: 4px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  /* лёгкое затухание по краям, как в макете */
+  mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.2) 0,
+    #000 var(--reviews-edge),
+    #000 calc(100% - var(--reviews-edge)),
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.reviews__track::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews__list {
+  display: flex;
+  gap: var(--reviews-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: max-content;
+}
+
+.reviews__slide {
+  flex: 0 0 400px;
+  scroll-snap-align: start;
+}
+
+/* ===== Карточка отзыва ===== */
+
+.review {
+  height: 100%;
+  padding: 28px 32px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background-color: var(--color-bg);
+}
+
+.review__stars {
+  --star: 22px;
+  display: block;
+  width: calc(5 * var(--star));
+  height: var(--star);
+  margin-bottom: 16px;
+  background-color: #ffc633;
+  -webkit-mask: var(--star-icon) repeat-x left center / var(--star) var(--star);
+  mask: var(--star-icon) repeat-x left center / var(--star) var(--star);
+  --star-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5l3.1 7 7.6.7-5.7 5 1.7 7.5L12 17.8l-6.7 3.9L7 14.2l-5.7-5 7.6-.7z'/%3E%3C/svg%3E");
+}
+
+.review__name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 12px;
+  font-family: var(--font-main);
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.review__verified {
+  display: block;
+  flex-shrink: 0;
+}
+
+.review__text {
+  margin: 0;
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* ===== Адаптив ===== */
+
+@media (max-width: 767px) {
+  .reviews {
+    --reviews-edge: 16px;
+    padding-bottom: 48px;
+  }
+
+  .reviews__header {
+    margin-bottom: 24px;
+  }
+
+  .reviews__title {
+    font-size: clamp(26px, 8.2vw, 32px);
+  }
+
+  /* на мобильных — один отзыв на всю ширину, листается стрелками/свайпом */
+  .reviews__track {
+    mask-image: none;
+  }
+
+  .reviews__slide {
+    flex-basis: calc(100vw - 32px);
+  }
+
+  /* как в макете: первым показываем отзыв «Максим А.» */
+  .reviews__slide:nth-child(5) {
+    order: -1;
+  }
+
+  .reviews__slide:nth-child(1) {
+    order: 1;
+  }
+
+  .review {
+    padding: 24px 20px;
+  }
+
+  .review__stars {
+    --star: 20px;
+  }
+
+  .review__name {
+    font-size: 18px;
+  }
+
+  .review__text {
+    font-size: 14px;
+  }
+}

@@ -10,6 +10,7 @@
     />
     <title>shop.co</title>
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/blocks/reviews.css" />
   </head>
   <body class="page__body">
     <div class="top-bar" id="top-bar">
@@ -458,54 +459,191 @@
             <ul class="dress-style__list">
               <li class="dress-style__item dress-style__item--small">
                 <a class="style-card" href="#">
-                  <img
-                    class="style-card__img"
-                    src="./images/style-clothes/free-style.svg"
-                    alt="Свободный"
-                    width="407"
-                    height="289"
-                    loading="lazy"
-                  />
+                  <span class="style-card__name">Свободный</span>
+                  <picture>
+                    <source
+                      media="(max-width: 993px)"
+                      srcset="./images/style-clothes/free-style-mini.svg"
+                    />
+                    <img
+                      class="style-card__img"
+                      src="./images/style-clothes/free-style.svg"
+                      alt="Свободный"
+                      width="407"
+                      height="289"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
               </li>
               <li class="dress-style__item dress-style__item--large">
                 <a class="style-card" href="#">
-                  <img
-                    class="style-card__img"
-                    src="./images/style-clothes/formal-style.svg"
-                    alt="Формальный"
-                    width="684"
-                    height="289"
-                    loading="lazy"
-                  />
+                  <span class="style-card__name">Формальный</span>
+                  <picture>
+                    <source
+                      media="(max-width: 993px)"
+                      srcset="./images/style-clothes/formal-style-mini.svg"
+                    />
+                    <img
+                      class="style-card__img"
+                      src="./images/style-clothes/formal-style.svg"
+                      alt="Формальный"
+                      width="684"
+                      height="289"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
               </li>
               <li class="dress-style__item dress-style__item--large">
                 <a class="style-card" href="#">
-                  <img
-                    class="style-card__img"
-                    src="./images/style-clothes/evening-style.svg"
-                    alt="Вечерний"
-                    width="684"
-                    height="289"
-                    loading="lazy"
-                  />
+                  <span class="style-card__name">Вечерний</span>
+                  <picture>
+                    <source
+                      media="(max-width: 993px)"
+                      srcset="./images/style-clothes/evening-style-mini.svg"
+                    />
+                    <img
+                      class="style-card__img"
+                      src="./images/style-clothes/evening-style.svg"
+                      alt="Вечерний"
+                      width="684"
+                      height="289"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
               </li>
               <li class="dress-style__item dress-style__item--small">
                 <a class="style-card" href="#">
-                  <img
-                    class="style-card__img"
-                    src="./images/style-clothes/sport-style.svg"
-                    alt="Спорт"
-                    width="407"
-                    height="289"
-                    loading="lazy"
-                  />
+                  <span class="style-card__name">Спорт</span>
+                  <picture>
+                    <source
+                      media="(max-width: 993px)"
+                      srcset="./images/style-clothes/sport-style-mini.svg"
+                    />
+                    <img
+                      class="style-card__img"
+                      src="./images/style-clothes/sport-style.svg"
+                      alt="Спорт"
+                      width="407"
+                      height="289"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
               </li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <!-- 7. ЧТО О НАС ГОВОРЯТ -->
+      <section class="reviews">
+        <div class="container">
+          <div class="reviews__header">
+            <h2 class="reviews__title">Что о нас говорят</h2>
+            <div class="reviews__controls">
+              <button
+                class="reviews__arrow reviews__arrow--prev"
+                type="button"
+                aria-label="Предыдущие отзывы"
+              >
+                <img src="./icons/left-arrow-black.svg" width="24" height="24" alt="" />
+              </button>
+              <button
+                class="reviews__arrow reviews__arrow--next"
+                type="button"
+                aria-label="Следующие отзывы"
+              >
+                <img src="./icons/right-arrow-black.svg" width="24" height="24" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="reviews__track" tabindex="0" aria-label="Отзывы покупателей">
+          <ul class="reviews__list">
+              <li class="reviews__slide">
+                <article class="review">
+                  <span class="review__stars" role="img" aria-label="Оценка 5 из 5"></span>
+                  <h3 class="review__name">
+                    Артём Л.
+                    <img
+                      class="review__verified"
+                      src="./icons/green-arrow.svg"
+                      width="24"
+                      height="24"
+                      alt="Подтверждённый покупатель"
+                    />
+                  </h3>
+                  <p class="review__text">«Приятно удивили цены и качество тканей. Отдельное спасибо поддержке за помощь с выбором размера.»</p>
+                </article>
+              </li>
+              <li class="reviews__slide">
+                <article class="review">
+                  <span class="review__stars" role="img" aria-label="Оценка 5 из 5"></span>
+                  <h3 class="review__name">
+                    Виталий У.
+                    <img
+                      class="review__verified"
+                      src="./icons/green-arrow.svg"
+                      width="24"
+                      height="24"
+                      alt="Подтверждённый покупатель"
+                    />
+                  </h3>
+                  <p class="review__text">«Я в восторге от качества и стиля одежды, которую получил от Shop.co. От повседневных вещей до элегантных платьев — каждая покупка превзошла мои ожидания.»</p>
+                </article>
+              </li>
+              <li class="reviews__slide">
+                <article class="review">
+                  <span class="review__stars" role="img" aria-label="Оценка 5 из 5"></span>
+                  <h3 class="review__name">
+                    Даниил В.
+                    <img
+                      class="review__verified"
+                      src="./icons/green-arrow.svg"
+                      width="24"
+                      height="24"
+                      alt="Подтверждённый покупатель"
+                    />
+                  </h3>
+                  <p class="review__text">«Раньше было трудно найти одежду под мой стиль, пока я не открыл Shop.co. Их ассортимент впечатляет и подходит для разных вкусов и случаев.»</p>
+                </article>
+              </li>
+              <li class="reviews__slide">
+                <article class="review">
+                  <span class="review__stars" role="img" aria-label="Оценка 5 из 5"></span>
+                  <h3 class="review__name">
+                    Альберт Б.
+                    <img
+                      class="review__verified"
+                      src="./icons/green-arrow.svg"
+                      width="24"
+                      height="24"
+                      alt="Подтверждённый покупатель"
+                    />
+                  </h3>
+                  <p class="review__text">«Я всегда ищу уникальные модные вещи и был рад открыть для себя Shop.co. Их выбор одежды очень разнообразен и полностью соответствует последним модным трендам.»</p>
+                </article>
+              </li>
+              <li class="reviews__slide">
+                <article class="review">
+                  <span class="review__stars" role="img" aria-label="Оценка 5 из 5"></span>
+                  <h3 class="review__name">
+                    Максим А.
+                    <img
+                      class="review__verified"
+                      src="./icons/green-arrow.svg"
+                      width="24"
+                      height="24"
+                      alt="Подтверждённый покупатель"
+                    />
+                  </h3>
+                  <p class="review__text">«Я впечатлён качеством и стилем одежды от Shop.co. От повседневных вещей до элегантных платьев — каждая покупка превзошла мои ожидания.»</p>
+                </article>
+              </li>
+          </ul>
         </div>
       </section>
     </main>
@@ -538,6 +676,51 @@
             burgerToggle.setAttribute("aria-expanded", "false");
           });
         }
+      });
+    </script>
+
+    <!-- Слайдер отзывов -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const track = document.querySelector(".reviews__track");
+        const prev = document.querySelector(".reviews__arrow--prev");
+        const next = document.querySelector(".reviews__arrow--next");
+        if (!track || !prev || !next) return;
+
+        // шаг прокрутки = ширина карточки + отступ между карточками
+        const step = () => {
+          const slide = track.querySelector(".reviews__slide");
+          const gap =
+            parseFloat(getComputedStyle(track.firstElementChild).columnGap) || 0;
+          return slide.getBoundingClientRect().width + gap;
+        };
+
+        // блокируем стрелки на краях ленты
+        const update = () => {
+          const max = track.scrollWidth - track.clientWidth - 2;
+          prev.disabled = track.scrollLeft <= 2;
+          next.disabled = track.scrollLeft >= max;
+        };
+
+        // Десктоп: стартуем со 2-й карточки — слева виден «призрак» предыдущей
+        // (как в макете). Мобильные: с самого начала, один отзыв за раз.
+        const desktop = window.matchMedia("(min-width: 768px)");
+        const setStart = () => {
+          track.scrollLeft = desktop.matches ? step() : 0;
+          update();
+        };
+
+        prev.addEventListener("click", () =>
+          track.scrollBy({ left: -step(), behavior: "smooth" })
+        );
+        next.addEventListener("click", () =>
+          track.scrollBy({ left: step(), behavior: "smooth" })
+        );
+        track.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+        desktop.addEventListener("change", setStart);
+        window.addEventListener("load", setStart);
+        setStart();
       });
     </script>
   </body>
