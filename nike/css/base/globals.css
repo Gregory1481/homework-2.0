@@ -4,6 +4,7 @@
   color: var(--main-color);
   scroll-behavior: smooth;
   scroll-padding-top: 98px;
+  scrollbar-gutter: stable;
 }
 
 .page__body {
@@ -21,6 +22,7 @@
 }
 
 img {
+  -o-object-fit: cover;
   object-fit: cover;
 }
 

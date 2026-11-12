@@ -12,9 +12,9 @@
   --disabled-color: #5d5d56;
   --disabled-glow-color: #5d5d564d;
   --shadow-color: #181817;
-  --overlay-color: #2a2a2980;
+  --overlay: linear-gradient(rgba(30, 30, 30, 0.9), #000 1810%);
 
-  /*shadows*/
+  /* shadows */
   --shadow-glow: 0 0 6px 2px var(--main-glow-color);
   --shadow-accent-glow: 0 0 6px 2px var(--accent-glow-color);
   --shadow-disabled-glow: 0 0 6px 2px var(--disabled-glow-color);
@@ -23,10 +23,10 @@
   --container-width: 1240px;
   --container-padding: 15px;
 
-  /*transitions*/
+  /* transitions */
   --transition-time: 0.2s;
 
-  /*layers*/
+  /* layers */
   --layer-negative: -1;
   --layer-0: 0;
   --layer-1: 1;
