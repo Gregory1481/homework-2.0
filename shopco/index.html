@@ -11,6 +11,7 @@
     <title>shop.co</title>
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/blocks/reviews.css" />
+    <link rel="stylesheet" href="./css/blocks/footer.css" />
   </head>
   <body class="page__body">
     <div class="top-bar" id="top-bar">
@@ -459,7 +460,7 @@
             <ul class="dress-style__list">
               <li class="dress-style__item dress-style__item--small">
                 <a class="style-card" href="#">
-                  <span class="style-card__name">Свободный</span>
+                  <h3 class="style-card__name">Свободный</h3>
                   <picture>
                     <source
                       media="(max-width: 993px)"
@@ -478,7 +479,7 @@
               </li>
               <li class="dress-style__item dress-style__item--large">
                 <a class="style-card" href="#">
-                  <span class="style-card__name">Формальный</span>
+                  <h3 class="style-card__name">Формальный</h3>
                   <picture>
                     <source
                       media="(max-width: 993px)"
@@ -497,7 +498,7 @@
               </li>
               <li class="dress-style__item dress-style__item--large">
                 <a class="style-card" href="#">
-                  <span class="style-card__name">Вечерний</span>
+                  <h3 class="style-card__name">Вечерний</h3>
                   <picture>
                     <source
                       media="(max-width: 993px)"
@@ -516,7 +517,7 @@
               </li>
               <li class="dress-style__item dress-style__item--small">
                 <a class="style-card" href="#">
-                  <span class="style-card__name">Спорт</span>
+                  <h3 class="style-card__name">Спорт</h3>
                   <picture>
                     <source
                       media="(max-width: 993px)"
@@ -549,106 +550,276 @@
                 type="button"
                 aria-label="Предыдущие отзывы"
               >
-                <img src="./icons/left-arrow-black.svg" width="24" height="24" alt="" />
+                <img
+                  src="./icons/left-arrow-black.svg"
+                  width="24"
+                  height="24"
+                  alt=""
+                />
               </button>
               <button
                 class="reviews__arrow reviews__arrow--next"
                 type="button"
                 aria-label="Следующие отзывы"
               >
-                <img src="./icons/right-arrow-black.svg" width="24" height="24" alt="" />
+                <img
+                  src="./icons/right-arrow-black.svg"
+                  width="24"
+                  height="24"
+                  alt=""
+                />
               </button>
             </div>
           </div>
         </div>
-        <div class="reviews__track" tabindex="0" aria-label="Отзывы покупателей">
+        <div
+          class="reviews__track"
+          tabindex="0"
+          aria-label="Отзывы покупателей"
+        >
           <ul class="reviews__list">
-              <li class="reviews__slide">
-                <article class="review">
-                  <span class="review__stars" role="img" aria-label="Оценка 5 из 5"></span>
-                  <h3 class="review__name">
-                    Артём Л.
-                    <img
-                      class="review__verified"
-                      src="./icons/green-arrow.svg"
-                      width="24"
-                      height="24"
-                      alt="Подтверждённый покупатель"
-                    />
-                  </h3>
-                  <p class="review__text">«Приятно удивили цены и качество тканей. Отдельное спасибо поддержке за помощь с выбором размера.»</p>
-                </article>
-              </li>
-              <li class="reviews__slide">
-                <article class="review">
-                  <span class="review__stars" role="img" aria-label="Оценка 5 из 5"></span>
-                  <h3 class="review__name">
-                    Виталий У.
-                    <img
-                      class="review__verified"
-                      src="./icons/green-arrow.svg"
-                      width="24"
-                      height="24"
-                      alt="Подтверждённый покупатель"
-                    />
-                  </h3>
-                  <p class="review__text">«Я в восторге от качества и стиля одежды, которую получил от Shop.co. От повседневных вещей до элегантных платьев — каждая покупка превзошла мои ожидания.»</p>
-                </article>
-              </li>
-              <li class="reviews__slide">
-                <article class="review">
-                  <span class="review__stars" role="img" aria-label="Оценка 5 из 5"></span>
-                  <h3 class="review__name">
-                    Даниил В.
-                    <img
-                      class="review__verified"
-                      src="./icons/green-arrow.svg"
-                      width="24"
-                      height="24"
-                      alt="Подтверждённый покупатель"
-                    />
-                  </h3>
-                  <p class="review__text">«Раньше было трудно найти одежду под мой стиль, пока я не открыл Shop.co. Их ассортимент впечатляет и подходит для разных вкусов и случаев.»</p>
-                </article>
-              </li>
-              <li class="reviews__slide">
-                <article class="review">
-                  <span class="review__stars" role="img" aria-label="Оценка 5 из 5"></span>
-                  <h3 class="review__name">
-                    Альберт Б.
-                    <img
-                      class="review__verified"
-                      src="./icons/green-arrow.svg"
-                      width="24"
-                      height="24"
-                      alt="Подтверждённый покупатель"
-                    />
-                  </h3>
-                  <p class="review__text">«Я всегда ищу уникальные модные вещи и был рад открыть для себя Shop.co. Их выбор одежды очень разнообразен и полностью соответствует последним модным трендам.»</p>
-                </article>
-              </li>
-              <li class="reviews__slide">
-                <article class="review">
-                  <span class="review__stars" role="img" aria-label="Оценка 5 из 5"></span>
-                  <h3 class="review__name">
-                    Максим А.
-                    <img
-                      class="review__verified"
-                      src="./icons/green-arrow.svg"
-                      width="24"
-                      height="24"
-                      alt="Подтверждённый покупатель"
-                    />
-                  </h3>
-                  <p class="review__text">«Я впечатлён качеством и стилем одежды от Shop.co. От повседневных вещей до элегантных платьев — каждая покупка превзошла мои ожидания.»</p>
-                </article>
-              </li>
+            <li class="reviews__slide">
+              <article class="review">
+                <span
+                  class="review__stars"
+                  role="img"
+                  aria-label="Оценка 5 из 5"
+                ></span>
+                <h3 class="review__name">
+                  Артём Л.
+                  <img
+                    class="review__verified"
+                    src="./icons/green-arrow.svg"
+                    width="24"
+                    height="24"
+                    alt="Подтверждённый покупатель"
+                  />
+                </h3>
+                <p class="review__text">
+                  «Приятно удивили цены и качество тканей. Отдельное спасибо
+                  поддержке за помощь с выбором размера.»
+                </p>
+              </article>
+            </li>
+            <li class="reviews__slide">
+              <article class="review">
+                <span
+                  class="review__stars"
+                  role="img"
+                  aria-label="Оценка 5 из 5"
+                ></span>
+                <h3 class="review__name">
+                  Виталий У.
+                  <img
+                    class="review__verified"
+                    src="./icons/green-arrow.svg"
+                    width="24"
+                    height="24"
+                    alt="Подтверждённый покупатель"
+                  />
+                </h3>
+                <p class="review__text">
+                  «Я в восторге от качества и стиля одежды, которую получил от
+                  Shop.co. От повседневных вещей до элегантных платьев — каждая
+                  покупка превзошла мои ожидания.»
+                </p>
+              </article>
+            </li>
+            <li class="reviews__slide">
+              <article class="review">
+                <span
+                  class="review__stars"
+                  role="img"
+                  aria-label="Оценка 5 из 5"
+                ></span>
+                <h3 class="review__name">
+                  Даниил В.
+                  <img
+                    class="review__verified"
+                    src="./icons/green-arrow.svg"
+                    width="24"
+                    height="24"
+                    alt="Подтверждённый покупатель"
+                  />
+                </h3>
+                <p class="review__text">
+                  «Раньше было трудно найти одежду под мой стиль, пока я не
+                  открыл Shop.co. Их ассортимент впечатляет и подходит для
+                  разных вкусов и случаев.»
+                </p>
+              </article>
+            </li>
+            <li class="reviews__slide">
+              <article class="review">
+                <span
+                  class="review__stars"
+                  role="img"
+                  aria-label="Оценка 5 из 5"
+                ></span>
+                <h3 class="review__name">
+                  Альберт Б.
+                  <img
+                    class="review__verified"
+                    src="./icons/green-arrow.svg"
+                    width="24"
+                    height="24"
+                    alt="Подтверждённый покупатель"
+                  />
+                </h3>
+                <p class="review__text">
+                  «Я всегда ищу уникальные модные вещи и был рад открыть для
+                  себя Shop.co. Их выбор одежды очень разнообразен и полностью
+                  соответствует последним модным трендам.»
+                </p>
+              </article>
+            </li>
+            <li class="reviews__slide">
+              <article class="review">
+                <span
+                  class="review__stars"
+                  role="img"
+                  aria-label="Оценка 5 из 5"
+                ></span>
+                <h3 class="review__name">
+                  Максим А.
+                  <img
+                    class="review__verified"
+                    src="./icons/green-arrow.svg"
+                    width="24"
+                    height="24"
+                    alt="Подтверждённый покупатель"
+                  />
+                </h3>
+                <p class="review__text">
+                  «Я впечатлён качеством и стилем одежды от Shop.co. От
+                  повседневных вещей до элегантных платьев — каждая покупка
+                  превзошла мои ожидания.»
+                </p>
+              </article>
+            </li>
           </ul>
         </div>
       </section>
     </main>
 
-    <!-- Скрипты автоматизации бургера и топ-бара -->
+    <!-- 8. РАССЫЛКА + ФУТЕР -->
+    <footer class="footer">
+      <div class="container">
+        <div class="newsletter">
+          <h2 class="newsletter__title">
+            Будьте в курсе всех последних новостей
+          </h2>
+          <form class="newsletter__form" action="#" id="newsletter-form">
+            <label class="newsletter__field">
+              <span class="visually-hidden">Ваша почта</span>
+              <img
+                class="newsletter__icon"
+                src="./icons/mail.svg"
+                width="24"
+                height="24"
+                alt=""
+                aria-hidden="true"
+              />
+              <input
+                class="newsletter__input"
+                type="email"
+                name="email"
+                placeholder="Ваша почта"
+                autocomplete="email"
+                required
+              />
+            </label>
+            <button class="newsletter__btn" type="submit">
+              Подписаться на рассылку
+            </button>
+          </form>
+        </div>
+
+        <div class="footer__top">
+          <div class="footer__about">
+            <a class="footer__logo" href="#" aria-label="SHOP.CO — на главную"
+              >SHOP.CO</a
+            >
+            <p class="footer__descr">
+              У нас есть одежда, что подходит вашему стилю и которой можно
+              гордиться. Для женщин и мужчин.
+            </p>
+            <div
+              class="footer__social"
+              data-svg="./icons/communication.svg"
+              data-links="Twitter,Facebook,Instagram,GitHub"
+            ></div>
+          </div>
+
+          <nav class="footer__nav" aria-label="Навигация по футеру">
+            <div class="footer__col">
+              <h3 class="footer__col-title">Компания</h3>
+              <ul class="footer__list">
+                <li><a class="footer__link" href="#">О нас</a></li>
+                <li><a class="footer__link" href="#">Функции</a></li>
+                <li><a class="footer__link" href="#">Работы</a></li>
+                <li><a class="footer__link" href="#">Карьера</a></li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <h3 class="footer__col-title">Помощь</h3>
+              <ul class="footer__list">
+                <li><a class="footer__link" href="#">Поддержка</a></li>
+                <li><a class="footer__link" href="#">Доставка</a></li>
+                <li><a class="footer__link" href="#">Условия</a></li>
+                <li><a class="footer__link" href="#">Политика</a></li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <h3 class="footer__col-title">Вопросы</h3>
+              <ul class="footer__list">
+                <li><a class="footer__link" href="#">Аккаунт</a></li>
+                <li><a class="footer__link" href="#">О доставке</a></li>
+                <li><a class="footer__link" href="#">Заказы</a></li>
+                <li><a class="footer__link" href="#">Платежи</a></li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <h3 class="footer__col-title">Ресурсы</h3>
+              <ul class="footer__list">
+                <li><a class="footer__link" href="#">Бесплатные книги</a></li>
+                <li><a class="footer__link" href="#">Уроки</a></li>
+                <li><a class="footer__link" href="#">Блог</a></li>
+                <li>
+                  <a class="footer__link" href="#">Плейлист на YouTube</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copy">Shop.co © 2000-2023, Все права защищены</p>
+          <div class="footer__pay">
+            <img src="./icons/visa.svg" alt="Visa" width="65" height="49" />
+            <img
+              src="./icons/mastercard.svg"
+              alt="Mastercard"
+              width="65"
+              height="49"
+            />
+            <img src="./icons/paypal.svg" alt="PayPal" width="65" height="49" />
+            <img
+              src="./icons/apple-pay.svg"
+              alt="Apple Pay"
+              width="65"
+              height="49"
+            />
+            <img
+              src="./icons/google-pay.svg"
+              alt="Google Pay"
+              width="65"
+              height="49"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const topBar = document.getElementById("top-bar");
@@ -679,7 +850,6 @@
       });
     </script>
 
-    <!-- Слайдер отзывов -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const track = document.querySelector(".reviews__track");
@@ -687,23 +857,20 @@
         const next = document.querySelector(".reviews__arrow--next");
         if (!track || !prev || !next) return;
 
-        // шаг прокрутки = ширина карточки + отступ между карточками
         const step = () => {
           const slide = track.querySelector(".reviews__slide");
           const gap =
-            parseFloat(getComputedStyle(track.firstElementChild).columnGap) || 0;
+            parseFloat(getComputedStyle(track.firstElementChild).columnGap) ||
+            0;
           return slide.getBoundingClientRect().width + gap;
         };
 
-        // блокируем стрелки на краях ленты
         const update = () => {
           const max = track.scrollWidth - track.clientWidth - 2;
           prev.disabled = track.scrollLeft <= 2;
           next.disabled = track.scrollLeft >= max;
         };
 
-        // Десктоп: стартуем со 2-й карточки — слева виден «призрак» предыдущей
-        // (как в макете). Мобильные: с самого начала, один отзыв за раз.
         const desktop = window.matchMedia("(min-width: 768px)");
         const setStart = () => {
           track.scrollLeft = desktop.matches ? step() : 0;
@@ -711,16 +878,36 @@
         };
 
         prev.addEventListener("click", () =>
-          track.scrollBy({ left: -step(), behavior: "smooth" })
+          track.scrollBy({ left: -step(), behavior: "smooth" }),
         );
         next.addEventListener("click", () =>
-          track.scrollBy({ left: step(), behavior: "smooth" })
+          track.scrollBy({ left: step(), behavior: "smooth" }),
         );
         track.addEventListener("scroll", update, { passive: true });
         window.addEventListener("resize", update);
         desktop.addEventListener("change", setStart);
         window.addEventListener("load", setStart);
         setStart();
+      });
+    </script>
+
+    <!-- Форма подписки -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("newsletter-form");
+        if (!form) return;
+        const btn = form.querySelector(".newsletter__btn");
+        const text = btn.textContent;
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          btn.textContent = "Спасибо за подписку!";
+          btn.disabled = true;
+          form.reset();
+          setTimeout(() => {
+            btn.textContent = text;
+            btn.disabled = false;
+          }, 2500);
+        });
       });
     </script>
   </body>

@@ -61,6 +61,7 @@
   top: 25px;
   left: 36px;
   z-index: 1;
+  margin: 0;
   font-family: var(--font-main);
   font-size: 36px;
   line-height: 1.2;
@@ -86,8 +87,8 @@
 }
 
 /* ===== Адаптив: меньше 994px ===== */
-/* Картинки меняются на *-mini.svg (без надписей) через <picture> в HTML,
-   карточки фиксируются в размере 310×190 и идут столбиком */
+/* Картинки меняются на *-mini.svg (через <picture> в HTML),
+   карточки идут в 2 одинаковых столбика и растягиваются по ширине */
 
 @media (max-width: 993px) {
   .dress-style {
@@ -106,27 +107,48 @@
   }
 
   .dress-style__list {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 
   .dress-style__item--small,
   .dress-style__item--large {
-    width: 310px;
-    max-width: 100%;
-    height: 190px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 310 / 190; /* пропорции mini-картинок */
   }
 
-  /* на мобильных надписи остаются поверх фото */
   .style-card__name {
-    top: 20px;
-    left: 24px;
-    font-size: 24px;
+    top: 16px;
+    left: 16px;
+    font-size: 20px;
   }
 
   .style-card__img {
-    object-position: center;
+    object-position: right center;
+  }
+}
+
+/* телефоны: карточки выше, чтобы было что показать в узком столбике */
+@media (max-width: 575px) {
+  .dress-style__box {
+    padding: 32px 16px 20px;
+  }
+
+  .dress-style__list {
+    gap: 12px;
+  }
+
+  .dress-style__item--small,
+  .dress-style__item--large {
+    height: 190px;
+    aspect-ratio: auto;
+  }
+
+  .style-card__name {
+    top: 14px;
+    left: 14px;
+    font-size: 14px;
   }
 }
